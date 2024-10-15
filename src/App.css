@@ -1,8 +1,8 @@
 body {
   background-color: hsl(0, 0%, 10%);
+  font-family: Roboto, sans-serif;
 }
 .to-do-list {
-  font-family: Arial, sans-serif;
   text-align: center;
   margin-top: 100px;
 }
