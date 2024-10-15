@@ -1,5 +1,11 @@
 import React from "react";
 import { useState } from "react";
+import ArrowCircleUpIcon from '@mui/icons-material/ArrowCircleUp';
+import ArrowCircleDownIcon from '@mui/icons-material/ArrowCircleDown';
+import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
+import HighlightOffIcon from '@mui/icons-material/HighlightOff';
+import NoteAltIcon from '@mui/icons-material/NoteAlt';
+import { Typography } from '@mui/material';
 
 function TodoList (){
     const [tasks, setTasks] = useState(["Eat Breakfast", "Take a Shower", "Walk the Dog"]);
@@ -39,7 +45,7 @@ function TodoList (){
 
     }
     return(<div>
-        <h1>To-Do-List</h1>
+        <Typography variant="h1" color="textprimary" gutterBottom>To-Do-List <NoteAltIcon fontSize="large"/></Typography>
         <div>
             <input
             type="text"
@@ -50,7 +56,7 @@ function TodoList (){
             <button 
             className="add-button"
             onClick={addTask}>
-                Add
+                <AddCircleOutlineIcon/>Add
             </button>
             
            
@@ -60,11 +66,11 @@ function TodoList (){
             <li key={index}>
                 <span className="text">{task}</span>
                 <button className="delete-button"
-                onClick={()=>deleteTask(index)}>Delete</button>
+                onClick={()=>deleteTask(index)}> <HighlightOffIcon/></button>
                 <button className="move-button"
-                onClick={()=>moveTaskUp(index)}>Up</button>
+                onClick={()=>moveTaskUp(index)}><ArrowCircleUpIcon/></button>
                 <button className="move-button"
-                onClick={()=>moveTaskDown(index)}>Down</button>
+                onClick={()=>moveTaskDown(index)}><ArrowCircleDownIcon/></button>
             </li>
             )}
         </ol>

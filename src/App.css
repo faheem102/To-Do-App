@@ -1,5 +1,5 @@
 body {
-  background-color: hsl(0, 0%, 10%);
+  background-color: hsla(0, 0%, 10%, 0.928);
   font-family: Roboto, sans-serif;
 }
 .to-do-list {
