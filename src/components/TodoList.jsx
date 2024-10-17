@@ -5,7 +5,7 @@ import ArrowCircleDownIcon from '@mui/icons-material/ArrowCircleDown';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import HighlightOffIcon from '@mui/icons-material/HighlightOff';
 import NoteAltIcon from '@mui/icons-material/NoteAlt';
-import { Typography } from '@mui/material';
+import { Typography, Button, Container, Grid2 } from '@mui/material';
 
 function TodoList (){
     const [tasks, setTasks] = useState(["Eat Breakfast", "Take a Shower", "Walk the Dog"]);
@@ -44,8 +44,12 @@ function TodoList (){
         }
 
     }
-    return(<div>
+    return(
+    <div>
+        <Grid2 display="flex" justifyContent="space-evenly" alignItems="center" size="grow">
         <Typography variant="h1" color="textprimary" gutterBottom>To-Do-List <NoteAltIcon fontSize="large"/></Typography>
+        <Button variant="contained">Change Mode</Button></Grid2>
+        
         <div>
             <input
             type="text"
