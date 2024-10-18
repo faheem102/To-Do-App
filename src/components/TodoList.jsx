@@ -6,10 +6,19 @@ import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import HighlightOffIcon from '@mui/icons-material/HighlightOff';
 import NoteAltIcon from '@mui/icons-material/NoteAlt';
 import { Typography, Button, Container, Grid2 } from '@mui/material';
+import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
+import {Paper} from "@mui/material";
 
 function TodoList (){
     const [tasks, setTasks] = useState(["Eat Breakfast", "Take a Shower", "Walk the Dog"]);
     const [newTask, setNewTask] = useState("");
+    const [darkMode, setDarkMode] = useState(false);
+
+    const theme = createTheme({
+        palette: {
+            mode: darkMode?"dark": "light"
+        }
+    })
     function handleInputChange(event){
         setNewTask(event.target.value);
 
@@ -45,10 +54,13 @@ function TodoList (){
 
     }
     return(
+        <ThemeProvider theme = {theme}>
+            <Paper style= {{height: "250vh"}}>
     <div>
+        
         <Grid2 display="flex" justifyContent="space-evenly" alignItems="center" size="grow">
         <Typography variant="h1" color="textprimary" gutterBottom>To-Do-List <NoteAltIcon fontSize="large"/></Typography>
-        <Button variant="contained">Change Mode</Button></Grid2>
+        <Button variant="contained" onClick={() => setDarkMode(!darkMode)} >Change Mode</Button></Grid2>
         
         <div>
             <input
@@ -78,6 +90,9 @@ function TodoList (){
             </li>
             )}
         </ol>
-    </div>);
+    </div>
+    </Paper>
+    </ThemeProvider>);
+   
 }
 export default TodoList
