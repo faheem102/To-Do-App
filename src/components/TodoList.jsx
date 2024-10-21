@@ -5,8 +5,8 @@ import ArrowCircleDownIcon from '@mui/icons-material/ArrowCircleDown';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import HighlightOffIcon from '@mui/icons-material/HighlightOff';
 import NoteAltIcon from '@mui/icons-material/NoteAlt';
-import { Typography, Button, Container, Grid2 } from '@mui/material';
-import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
+import { Typography, Button, Grid2 } from '@mui/material';
+import { createTheme, ThemeProvider} from '@mui/material/styles';
 import {Paper} from "@mui/material";
 
 function TodoList (){
